@@ -5,25 +5,82 @@
   <meta charset="utf-8">
 </head>
 <body>
-  <form>
-    <h1>Romantic Asistant спешит на помощ!</h1>
+  <div>
+    <h1>Romantic Asistant спешит на помощь!</h1>
     <h2>Выбери варианты событий: </h2>
-    <input type="checkbox" name="veriable" id="1ver">
-    <label for="1ver"> Цветы</label><br>
-     
-    <input type="checkbox" name="veriable" id="2ver">
-    <label for="2ver"> Шоколад</label><br>
-     
-    <input type="checkbox" name="veriable" id="3ver">
-    <label for="3ver"> Записка на зеркале</label><br>
-     
-    <input type="checkbox" name="veriable" id="4ver">
-    <label for="4ver"> Завтрак</label><br>
-     
-    <input type="checkbox" name="veriable" id="5ver">
-    <label for="5ver"> Конфеты</label><br>
+    
+    <input type="checkbox" id="ver1">
+    <label for="ver1"> Цветы</label><br>
 
-    <input type="submit" name="choose" value="Выбрать"> 
-  </form>
+    <input type="checkbox" id="ver2">
+    <label for="ver2"> Шоколад</label><br>
+
+    <input type="checkbox" id="ver3">
+    <label for="ver3"> Ужин</label><br>
+
+    <input type="checkbox" id="ver4">
+    <label for="ver4"> Завтрак</label><br>
+
+    <input type="checkbox" id="ver5">
+    <label for="ver5"> Конфеты</label><br>
+
+    <button onclick="clicked()">Выбрать</button> 
+  </div>
+  <ol id="result">
+
+  </ol>
+  <script>
+    function clicked() {
+      var labels = document.getElementsByTagName('label');
+      var texts = [];
+      for (var i = 0; i < labels.length; i++) {
+        labels[i];  
+        var x = document.getElementById(labels[i].htmlFor);
+        if (x.checked == true){
+          // console.log(labels[i].innerText);
+          texts.push(labels[i].innerHTML);
+        }            
+      }
+      var box = document.getElementById('result');
+      box.innerHTML = '';
+      
+      for (var i = 0; i < texts.length; i++){
+       var newLi = document.createElement('li');
+       newLi.innerHTML = texts[i]; 
+       box.appendChild(newLi);
+      }
+
+
+      }
+      
+        
+      
+
+         // новая функция клика добавления инпута со своим вариантом
+     
+      
+    
+
+     </script>
 </body>
-</html>
+</html>   
+      
+    
+
+<!-- / showId('ver1');
+//       showId('ver2');
+//       showId('ver3');
+//       showId('ver4');
+//       showId('ver5');
+//       console.log('___');}
+
+
+
+    // function showId(id) {
+    //   var elem = document.getElementById(id);
+    //   if (elem.checked == true){
+    //     console.log(elem.id);
+    //   }
+    // } -->
+
+  
