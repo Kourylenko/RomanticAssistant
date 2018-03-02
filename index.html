@@ -30,10 +30,10 @@
   <ol id="result">
     <!--  Тут генерируются выбраные варианты -->
   </ol>
+  <!-- <div id="viewButton"></div> -->
   
-  <!-- <div id="viewButton"> -->
-  <button onclick="generation()" id = addButton style="visibility: hidden;">Перемешать</button> 
-  <!-- </div> -->
+  <button onclick="generation()" id = "addButton" style="visibility: hidden;">Перемешать</button> 
+ 
   <script>
     function clicked() {
       var labels = document.getElementsByTagName('label');
@@ -56,9 +56,13 @@
       }
 
       var newButton = document.getElementById('addButton');
-        if (box.appendChild(newLi)){
-          addButton.style="visibility: visible;";
-        }
+      if (texts.length > 0) {
+        addButton.style="visibility: visible;";
+      } else {
+        addButton.style="visibility: hidden;";
+      }
+  
+
       // var addButton = document.getElementById('viewButton');
       // addButton.innerHTML='';
       // if (box.appendChild(newLi)){
