@@ -26,9 +26,14 @@
 
     <button onclick="clicked()">Выбрать</button> 
   </div>
+  
   <ol id="result">
-
+    <!--  Тут генерируются выбраные варианты -->
   </ol>
+  
+  <div id="viewButton">
+  <!-- <button onclick="generation()" id="">Перемешать</button> -->
+  </div>
   <script>
     function clicked() {
       var labels = document.getElementsByTagName('label');
@@ -50,8 +55,13 @@
        box.appendChild(newLi);
       }
 
-
+      var addButton = document.getElementById('viewButton');
+      addButton.innerHTML='';
+      if (box.appendChild(newLi)){
+        var newButton = document.createElement('button');
+        addButton.appendChild(newButton);
       }
+    }
       
         
       
